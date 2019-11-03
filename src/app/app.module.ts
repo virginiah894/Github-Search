@@ -8,6 +8,7 @@ import { DisplayComponent } from './display/display.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RepositoryComponent } from './repository/repository.component';
 import { HighlightDirective } from './highlight.directive';
+import { DatesPipe } from './dates.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HighlightDirective } from './highlight.directive';
     DisplayComponent,
     NavbarComponent,
     RepositoryComponent,
-    HighlightDirective
+    HighlightDirective,
+    DatesPipe
   ],
   imports: [
     BrowserModule,

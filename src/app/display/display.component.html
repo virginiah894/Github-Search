@@ -5,6 +5,7 @@
   <ul>
     <div *ngFor='let user of users let i=index'>
       <li appHighlight>{{user.name}}</li>
+      <li>Member since : {{user.memberDate|date}}</li>
       <br>
   
       <button (click)="toggleDetails(i)">Show More</button>

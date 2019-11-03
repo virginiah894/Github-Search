@@ -10,10 +10,10 @@ import{ User} from "../user";
 })
 export class DisplayComponent implements OnInit {
     users:User[]=[
- new User("Virginiah",4),
- new User("VirginiahA",7),
- new User("VirginiahA",52),
- new User("VirginiahA",10),
+ new User("Virginiah",4,new Date(2018,0,23)),
+ new User("VirginiahA",7,new Date(2017,4,20)),
+ new User("VirginiahA",52,new Date(2019,10,1)),
+ new User("VirginiahA",10,new Date(2016,9,10)),
  
 ];
 toggleDetails(index){
