@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import{ HttpClient} from "@angular/common/http"
-import{ UserService} from "../user-service/user.service";
+// import{ HttpClient} from "@angular/common/http"
+// import{ UserService} from "../user-service/user.service";
 import{ User} from "../user";
 @Component({
   selector: 'app-display',
@@ -8,22 +8,35 @@ import{ User} from "../user";
   styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnInit {
-users:User[];
-  constructor(public userService:UserService, private Http:HttpClient) { }
+users:User=[
+ { name:"Virginiah"},
+
+ { name:"Virginiah"},
+
+ { name:"Virginiah"},
+
+ { name:"Virginiah"}
+
+
+];
+
+
+
+  // constructor(public userService:UserService, private Http:HttpClient) { }
 
   ngOnInit() {
-    this.searchUser("virginiah894");
+    // this.searchUser("virginiah894");
   }
 
-  searchUser(searchTerm){
-    this.userService.searchUser(searchTerm).then(
-      ()=>{
-        this.users=this.userService.users;
-      },
-      (error)=>{
-        console.log(error)
-      }
-    )
-    }
+  // searchUser(searchTerm){
+  //   this.userService.searchUser(searchTerm).then(
+  //     ()=>{
+  //       this.users=this.userService.users;
+  //     },
+  //     (error)=>{
+  //       console.log(error)
+  //     }
+  //   )
+  //   }
   
-  }
+  // }
