@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { DisplayComponent } from './display/display.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RepositoryComponent } from './repository/repository.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     DisplayComponent,
     NavbarComponent,
-    RepositoryComponent
+    RepositoryComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

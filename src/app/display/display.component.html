@@ -4,7 +4,7 @@
   <hr>
   <ul>
     <div *ngFor='let user of users let i=index'>
-      <li>{{user.name}}</li>
+      <li appHighlight>{{user.name}}</li>
       <br>
   
       <button (click)="toggleDetails(i)">Show More</button>
