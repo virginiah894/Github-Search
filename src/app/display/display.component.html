@@ -2,6 +2,11 @@
  <div>
   <h1>Users</h1>
   <hr>
+  <div id="search">
+      <app-user-form></app-user-form>
+  </div>
+  <hr>
+  <br>
   <ul>
     <div *ngFor='let user of users let i=index'>
       <li appHighlight>{{user.name}}</li>
@@ -12,6 +17,5 @@
       <app-repository *ngIf="user.showRepositories"[user]="user" (onPage)="currentPage($event,i)"></app-repository>
     </div>
   </ul>
-  
   
 </div>

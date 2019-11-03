@@ -9,6 +9,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RepositoryComponent } from './repository/repository.component';
 import { HighlightDirective } from './highlight.directive';
 import { DatesPipe } from './dates.pipe';
+import { UserFormComponent } from './user-form/user-form.component';
+import { FormsModule} from "@angular/forms"
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { DatesPipe } from './dates.pipe';
     NavbarComponent,
     RepositoryComponent,
     HighlightDirective,
-    DatesPipe
+    DatesPipe,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
