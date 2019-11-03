@@ -1,6 +1,7 @@
 export class User {
   // constructor(public url:string)
-  constructor(public name:string){
-    
+  showRepositories:Boolean;
+  constructor(public name:string, public repositories:number){
+    this.showRepositories=false;
   }
 }

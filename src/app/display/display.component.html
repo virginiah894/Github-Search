@@ -5,6 +5,13 @@
   <ul>
     <li *ngFor='let user of users'>
       {{user.name}}
+      <br>
+  
+      <button (click)="toggleDetails(i)">Show More</button>
+      <app-repository *ngIf="user.showRepositories"[user]="user"></app-repository>
+    
     </li>
   </ul>
+  
+  
 </div>

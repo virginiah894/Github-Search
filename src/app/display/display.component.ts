@@ -8,25 +8,25 @@ import{ User} from "../user";
   styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnInit {
-users:User=[
- { name:"Virginiah"},
-
- { name:"Virginiah"},
-
- { name:"Virginiah"},
-
- { name:"Virginiah"}
-
-
+    users:User[]=[
+ new User("Virginiah",4),
+ new User("VirginiahA",7),
+ new User("VirginiahA",52),
+ new User("VirginiahA",10),
+ 
 ];
+toggleDetails(index){
+  this.users[index].showRepositories= !this.users[index].showRepositories;
+}
 
-
+constructor(){}
 
   // constructor(public userService:UserService, private Http:HttpClient) { }
 
   ngOnInit() {
     // this.searchUser("virginiah894");
   }
+}
 
   // searchUser(searchTerm){
   //   this.userService.searchUser(searchTerm).then(
@@ -38,5 +38,4 @@ users:User=[
   //     }
   //   )
   //   }
-  
-  // }
+
