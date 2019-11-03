@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import{ HttpClient} from "@angular/common/http"
 import{ UserService} from "../user-service/user.service";
 import{ User} from "../user";
 @Component({
@@ -8,7 +9,7 @@ import{ User} from "../user";
 })
 export class DisplayComponent implements OnInit {
 users:User[];
-  constructor(public userService:UserService) { }
+  constructor(public userService:UserService, private Http:HttpClient) { }
 
   ngOnInit() {
     this.searchUser("virginiah894");

@@ -13,6 +13,7 @@ export class UserService {
 
   searchUser(searchTerm:string){
   let searchEndpoint= "https://api.github.com/users/virginiah894?access_token="+environment.githubApi;
+  
     searchEndpoint += "&q="+searchTerm;
     let promise =  new Promise((resolve, reject)=>{
         this.http.get(searchEndpoint).toPromise().then(

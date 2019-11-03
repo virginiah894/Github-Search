@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   githubApi: "2278fbb77ef29c40c80322ec522523458a038adb",
+  accessToken:"8228f41d3571bc4b2c0027ce3f3f5b90e01dd06c"
 };
 
 
