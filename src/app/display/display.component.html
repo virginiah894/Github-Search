@@ -3,14 +3,13 @@
   <h1>Users</h1>
   <hr>
   <ul>
-    <li *ngFor='let user of users'>
-      {{user.name}}
+    <div *ngFor='let user of users let i=index'>
+      <li>{{user.name}}</li>
       <br>
   
       <button (click)="toggleDetails(i)">Show More</button>
-      <app-repository *ngIf="user.showRepositories"[user]="user"></app-repository>
-    
-    </li>
+      <app-repository *ngIf="user.showRepositories"[user]="user" (onPage)="currentPage($event,i)"></app-repository>
+    </div>
   </ul>
   
   

@@ -1,4 +1,4 @@
-import { Component, OnInit ,Input} from '@angular/core';
+import { Component, OnInit ,Input,Output,EventEmitter,} from '@angular/core';
 import { User } from '../user';
 
 @Component({
@@ -7,7 +7,13 @@ import { User } from '../user';
   styleUrls: ['./repository.component.css']
 })
 export class RepositoryComponent implements OnInit {
-@Input() user:User;
+
+  @Input() user:User;
+@Output() onPage = new EventEmitter<boolean>();
+
+currentSearch(on:boolean){
+  this.onPage.emit(on);
+}
   constructor() { }
 
   ngOnInit() {

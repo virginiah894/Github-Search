@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 // import{ HttpClient} from "@angular/common/http"
 // import{ UserService} from "../user-service/user.service";
 import{ User} from "../user";
+import { ActivationEnd } from '@angular/router';
+import { O_NOFOLLOW } from 'constants';
 @Component({
   selector: 'app-display',
   templateUrl: './display.component.html',
@@ -17,6 +19,11 @@ export class DisplayComponent implements OnInit {
 ];
 toggleDetails(index){
   this.users[index].showRepositories= !this.users[index].showRepositories;
+}
+currentPage(onPage,index){
+  if(onPage){
+    this.users.splice(index,1);
+  }
 }
 
 constructor(){}
