@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 // import{ HttpClient} from "@angular/common/http"
-// import{ UserService} from "../user-service/user.service";
 import{ User} from "../user";
+import{ DisplayService} from "../display-service/display.service";
+
 
 @Component({
   selector: 'app-display',
@@ -9,13 +10,21 @@ import{ User} from "../user";
   styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnInit {
-    users:User[]=[
- new User("Virginiah",4,new Date(2018,0,23)),
- new User("VirginiahA",7,new Date(2017,4,20)),
- new User("VirginiahA",52,new Date(2019,10,1)),
- new User("VirginiahA",10,new Date(2016,9,10)),
+  
+    users:User[];
+
+    constructor( displayService:DisplayService){
+      // this.users = displayService.getUsers();
+    }
+    
+
+    // =[
+//  new User("Virginiah",4,new Date(2018,0,23)),
+//  new User("VirginiahA",7,new Date(2017,4,20)),
+//  new User("VirginiahA",52,new Date(2019,10,1)),
+//  new User("VirginiahA",10,new Date(2016,9,10)),
  
-];
+// ];
 toggleDetails(index){
   this.users[index].showRepositories= !this.users[index].showRepositories;
 }
@@ -25,14 +34,16 @@ currentPage(onPage,index){
   }
 }
 
-constructor(){}
 
   // constructor(public userService:UserService, private Http:HttpClient) { }
 
   ngOnInit() {
-    // this.searchUser("virginiah894");
+
   }
 }
+    // this.searchUser("virginiah894");
+  
+
 
   // searchUser(searchTerm){
   //   this.userService.searchUser(searchTerm).then(
