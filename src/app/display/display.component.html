@@ -3,7 +3,7 @@
     <h1>Users</h1>
     <hr>
     <div id="search">
-        <app-user-form (emitresults)="onClick($event)"></app-user-form>
+        <app-user-form (emitresult)="name($event)"></app-user-form>
     </div>
     <hr>
   <br>
@@ -15,8 +15,8 @@
         </div>
         <div class="col-md-6">
     <div *ngIf='user'>
-            <p>{{user.name}}</p>
-      <button><a href="{{user.url}}"> view profile</a></button>
+            <p>{{user.name|uppercase}}</p>
+      <button appHighlight><a href="{{user.url}}" style="color: black;"> view profile</a></button>
       </div>
       <div class="col-md-6">
       
@@ -27,9 +27,9 @@
            </div>
   
       <!-- <li appHighlight>{{user.name|uppercase}}</li> -->
-      <p>Active for : {{user.created_at|dates}}<br>
+      <!-- <p>Active for : {{user.created_at|dates}}<br> -->
          <a href="{{user.avatar_url}}
-         ">IMAGE LINK</a>      
+         " appHighlight>IMAGE LINK</a>      
   
       <!-- <button (click)="toggleDetails(i)">Show More</button>
       <app-repository *ngIf="user.showRepositories"[user]="user" (onPage)="currentPage($event,i)"></app-repository> -->
