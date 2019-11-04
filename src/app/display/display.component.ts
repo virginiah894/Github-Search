@@ -11,7 +11,7 @@ import{ User} from "../user";
 })
 export class DisplayComponent implements OnInit {
 
-  public searchTerm:string ="Virginiah894";
+  public searchTerm:string ="virginiah894";
   user:User;
 
          constructor(public httpservice:ProfileRequestService){

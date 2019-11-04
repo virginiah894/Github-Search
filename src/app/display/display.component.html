@@ -7,23 +7,35 @@
   </div>
   <hr>
   <br>
-  <ul>
+ 
       <div class="row">
         <div class="col-md-6">
     <!-- <img src="" alt=""> -->
         </div>
         <div class="col-md-6" style="text-align: center;">
-    <div *ngFor='let user of users let i=index'>
-      <li appHighlight>{{user.name|uppercase}}</li>
-      <li>Member since : {{user.memberDate|date}}</li>
-      <br>
+    <div *ngIf='user'>
+      <p>{{user.url}}</p>
+      <img src="{{user.avatar_url}}" alt="">
+      <p>{{user.name}}}</p>
+      </div>
+      <div class="col-md-6">
+      
+              <p>Repositories: {{user.repositories}}</p>
+            <p>Date joined:{{user.memberDate}}</p>
+              <p>Followers: {{user.followers}}</p>
+              <p>Following: {{user.following}}</p>
+           </div>
+  
+      <!-- <li appHighlight>{{user.name|uppercase}}</li> -->
+      <p>Member since : {{user.memberDate|date}}<br>
+      {{user.avatar_url}}</p>
+      
   
       <button (click)="toggleDetails(i)">Show More</button>
       <app-repository *ngIf="user.showRepositories"[user]="user" (onPage)="currentPage($event,i)"></app-repository>
     </div>
     </div>
   </div>
-  </ul>
-  </div>
+
   
 
