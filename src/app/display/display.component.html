@@ -1,6 +1,6 @@
  <!-- <p class="mb-0">{{user.url}}</p> -->
- <div>
-  <h1>Users</h1>
+ <div class="container">
+    <h1>Users</h1>
   <hr>
   <div id="search">
       <app-user-form></app-user-form>
@@ -8,6 +8,11 @@
   <hr>
   <br>
   <ul>
+      <div class="row">
+        <div class="col-md-6">
+    <img src="https://avatars3.githubusercontent.com/u/54443706?s=460&v=4" alt="">
+        </div>
+        <div class="col-md-6">
     <div *ngFor='let user of users let i=index'>
       <li appHighlight>{{user.name}}</li>
       <li>Member since : {{user.memberDate|date}}</li>
@@ -16,6 +21,9 @@
       <button (click)="toggleDetails(i)">Show More</button>
       <app-repository *ngIf="user.showRepositories"[user]="user" (onPage)="currentPage($event,i)"></app-repository>
     </div>
+    </div>
+  </div>
   </ul>
+  </div>
   
-</div>
+

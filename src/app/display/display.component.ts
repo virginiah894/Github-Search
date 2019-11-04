@@ -11,11 +11,16 @@ import{ DisplayService} from "../display-service/display.service";
 })
 export class DisplayComponent implements OnInit {
   
-    users:User[];
+    users:User[] =[
+ new User( "Virginiah",4,new Date(2018,0,23)),
+ new User("VirginiahA",7,new Date(2017,4,20)),
+ 
+ 
+];
 
-    constructor( displayService:DisplayService){
-      // this.users = displayService.getUsers();
-    }
+         // this.users = displayService.getUsers();
+         constructor( displayService:DisplayService){
+        }
     
 
     // =[
