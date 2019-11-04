@@ -14,9 +14,10 @@
         </div>
         <div class="col-md-6" style="text-align: center;">
     <div *ngIf='user'>
-      <p>{{user.url}}</p>
+      
       <img src="{{user.avatar_url}}" alt="">
-      <p>{{user.name}}}</p>
+      <p>{{user.name}}</p>
+      <button><a href="{{user.url}}"> view profile</a></button>
       </div>
       <div class="col-md-6">
       
@@ -31,9 +32,16 @@
       {{user.avatar_url}}</p>
       
   
-      <button (click)="toggleDetails(i)">Show More</button>
-      <app-repository *ngIf="user.showRepositories"[user]="user" (onPage)="currentPage($event,i)"></app-repository>
+      <!-- <button (click)="toggleDetails(i)">Show More</button>
+      <app-repository *ngIf="user.showRepositories"[user]="user" (onPage)="currentPage($event,i)"></app-repository> -->
     </div>
+
+    </div>
+    <div class="contaner" *ngFor = "let repos of repositories">
+      <h1>{{ repos.name}}</h1>
+      <p>{{repos.description}}</p>
+      <br>
+      <p> <a href="{{repos.html_url}}">Descrpition</a></p>
     </div>
   </div>
 

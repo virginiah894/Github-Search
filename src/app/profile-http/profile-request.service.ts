@@ -9,9 +9,15 @@ import { Repositories } from '../repositories';
 })
 export class ProfileRequestService {
   users:User;
-  constructor(private http:HttpClient) { }
+  repositories:any=[];
+
+  constructor(private http:HttpClient) { 
+this.users=new User("","","",0,new Date,0,0);
+this.repositories=new Repositories("","","")
+  }
 
   searchUsers(searchTerm:string){
+
     interface personInfo{
       url:string;
       avatar_url:string;
@@ -26,8 +32,8 @@ export class ProfileRequestService {
     searchEndpoint += "&q="+searchTerm;
     let promise =  new Promise((resolve, reject)=>{
         this.http.get<personInfo>(searchEndpoint).toPromise().then(
-          (results)=>{
-            this.users=new User(results.url, results.avatar_url,results.name,results.repositories,results.memberDate,results.followers,results.following)
+          (result)=>{
+            this.users=new User(result.url, result.avatar_url,result.name,result.repositories,result.memberDate,result.followers,result.following)
             
             
             // for(let i=0; i<results["data"].length; i++){
@@ -36,17 +42,49 @@ export class ProfileRequestService {
             //   this.users.push(user);
             // }
             resolve()
-            console.log
+            console.log(result)
           },
           (error)=>{
             console.log(error)
-            reject()
+            reject();
           }
         )
     })
     return promise;
+}
 
+searchRepositories(searchTerm:string){
 
-
+  interface personRepos{
+    
+    name:string;
+    description:string;
+    html_url:string;
   }
+  
+  let searchEndpointA= "https://api.github.com/users/"+searchTerm+"/repos?order=created&sort=asc?access_token"+environment.githubApi;
+  searchEndpointA += "&q="+searchTerm;
+  let PromiseA =  new Promise((resolve, reject)=>{
+      this.http.get<personRepos>(searchEndpointA).toPromise().then(
+        (personRepos)=>{
+          this.repositories=personRepos;
+          
+          
+          // for(let i=0; i<results["data"].length; i++){
+          //   let url = results["data"][i]["images"]["fixed_height"]["url"];
+          //   let user= new Repositories(url);
+          //   this.users.push(user);
+          // }
+          resolve()
+          console.log(personRepos)
+        },
+        (error)=>{
+          console.log(error)
+          reject(error);
+        }
+      )
+  })
+  return PromiseA;
+}
+
 }
