@@ -1,11 +1,11 @@
  <!-- <p class="mb-0">{{user.url}}</p> -->
  <div class="container">
     <h1>Users</h1>
-  <hr>
-  <div id="search">
-      <app-user-form (emitresults)="onClick($event)"></app-user-form>
-  </div>
-  <hr>
+    <hr>
+    <div id="search">
+        <app-user-form (emitresults)="onClick($event)"></app-user-form>
+    </div>
+    <hr>
   <br>
  
       <div class="row">
@@ -28,8 +28,8 @@
   
       <!-- <li appHighlight>{{user.name|uppercase}}</li> -->
       <p>Active for : {{user.created_at|dates}}<br>
-      {{user.avatar_url}}</p>
-      
+         <a href="{{user.avatar_url}}
+         ">IMAGE LINK</a>      
   
       <!-- <button (click)="toggleDetails(i)">Show More</button>
       <app-repository *ngIf="user.showRepositories"[user]="user" (onPage)="currentPage($event,i)"></app-repository> -->

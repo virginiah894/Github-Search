@@ -10,7 +10,7 @@ import { RepositoryComponent } from './repository/repository.component';
 import { HighlightDirective } from './highlight.directive';
 import { DatesPipe } from './dates.pipe';
 import { UserFormComponent } from './user-form/user-form.component';
-import { FormsModule} from "@angular/forms"
+import { FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [

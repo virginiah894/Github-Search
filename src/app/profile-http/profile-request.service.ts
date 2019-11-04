@@ -10,7 +10,7 @@ import { Repositories } from '../repositories';
 export class ProfileRequestService {
   users:User;
   repositories:any=[];
-
+full:Repositories;
   constructor(private http:HttpClient) { 
 this.users=new User("","","",0,new Date,0,0);
 this.repositories=new Repositories("","","")
