@@ -22,8 +22,8 @@ this.repositories=new Repositories("","","")
       url:string;
       avatar_url:string;
       name:string;
-      repositories:number;
-      memberDate:Date;
+      public_repos:number;
+      created_at:Date;
       followers:number;
       following:number;
     }
@@ -33,7 +33,7 @@ this.repositories=new Repositories("","","")
     let promise =  new Promise((resolve, reject)=>{
         this.http.get<personInfo>(searchEndpoint).toPromise().then(
           (result)=>{
-            this.users=new User(result.url, result.avatar_url,result.name,result.repositories,result.memberDate,result.followers,result.following)
+            this.users=new User(result.url, result.avatar_url,result.name,result.public_repos,result.created_at,result.followers,result.following)
             
             
             // for(let i=0; i<results["data"].length; i++){
