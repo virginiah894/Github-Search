@@ -14,9 +14,21 @@ export class DisplayComponent implements OnInit {
   public searchTerm:string ="Virginiah894";
   user:User;
 
-         constructor(public searchUsers:ProfileRequestService){
+         constructor(public httpservice:ProfileRequestService){
         }
-    
+        onClick(searchTerm){
+          this.httpservice.searchUsers(this.searchTerm).then(
+            ()=>{
+              this.user = this.httpservice.users;
+            },(error)=>{
+              console.log(error);
+            })
+          }
+
+            ngOnInit() {
+              this.onClick(this.searchTerm);
+            }
+          }
 
     // =[
 //  new User("Virginiah",4,new Date(2018,0,23)),
@@ -37,22 +49,5 @@ export class DisplayComponent implements OnInit {
 
   // constructor(public userService:UserService, private Http:HttpClient) { }
 
-  ngOnInit() {
-
-  }
-}
-    // this.searchUser("virginiah894");
   
-
-
-  // searchUser(searchTerm){
-  //   this.userService.searchUser(searchTerm).then(
-  //     ()=>{
-  //       this.users=this.userService.users;
-  //     },
-  //     (error)=>{
-  //       console.log(error)
-  //     }
-  //   )
-  //   }
 
