@@ -1,7 +1,7 @@
 export class User {
-  // constructor(public url:string)
+  
   showRepositories:Boolean;
-  constructor(public name:any, public repositories:number, public memberDate:Date){
+  constructor(public url:string,  public avatar_url:string, public name:string, public repositories:number, public memberDate:Date,public followers:number,public following:number){
     this.showRepositories=false;
   }
 }

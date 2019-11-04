@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// import{ HttpClient} from "@angular/common/http"
+import{ProfileRequestService } from "../profile-http/profile-request.service";
 import{ User} from "../user";
-import{ DisplayService} from "../display-service/display.service";
+
 
 
 @Component({
@@ -10,16 +10,11 @@ import{ DisplayService} from "../display-service/display.service";
   styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnInit {
-  
-    users:User[] =[
- new User( "Virginiah",4,new Date(2018,0,23)),
- new User("VirginiahA",7,new Date(2017,4,20)),
- 
- 
-];
 
-         // this.users = displayService.getUsers();
-         constructor( displayService:DisplayService){
+  public searchTerm:string ="Virginiah894";
+  user:User;
+
+         constructor(public searchUsers:ProfileRequestService){
         }
     
 
@@ -30,14 +25,14 @@ export class DisplayComponent implements OnInit {
 //  new User("VirginiahA",10,new Date(2016,9,10)),
  
 // ];
-toggleDetails(index){
-  this.users[index].showRepositories= !this.users[index].showRepositories;
-}
-currentPage(onPage,index){
-  if(onPage){
-    this.users.splice(index,1);
-  }
-}
+// toggleDetails(index){
+//   this.users[index].showRepositories= !this.users[index].showRepositories;
+// }
+// currentPage(onPage,index){
+//   if(onPage){
+//     this.users.splice(index,1);
+//   }
+// }
 
 
   // constructor(public userService:UserService, private Http:HttpClient) { }

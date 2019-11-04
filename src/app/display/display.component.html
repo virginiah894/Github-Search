@@ -10,11 +10,11 @@
   <ul>
       <div class="row">
         <div class="col-md-6">
-    <img src="https://avatars3.githubusercontent.com/u/54443706?s=460&v=4" alt="">
+    <!-- <img src="" alt=""> -->
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" style="text-align: center;">
     <div *ngFor='let user of users let i=index'>
-      <li appHighlight>{{user.name}}</li>
+      <li appHighlight>{{user.name|uppercase}}</li>
       <li>Member since : {{user.memberDate|date}}</li>
       <br>
   
