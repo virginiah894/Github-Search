@@ -28,7 +28,7 @@ this.repositories=new Repositories("","","")
       following:number;
     }
     
-    let searchEndpoint= "https://api.github.com/users/"+searchTerm+"?access_token"+environment.githubApi;
+    let searchEndpoint= "https://api.github.com/users/"+searchTerm+"?access_token="+environment.githubApi;
     searchEndpoint += "&q="+searchTerm;
     let promise =  new Promise((resolve, reject)=>{
         this.http.get<personInfo>(searchEndpoint).toPromise().then(
@@ -62,7 +62,7 @@ searchRepositories(searchTerm:string){
     html_url:string;
   }
   
-  let searchEndpointA= "https://api.github.com/users/"+searchTerm+"/repos?order=created&sort=asc?access_token"+environment.githubApi;
+  let searchEndpointA= "https://api.github.com/users/"+searchTerm+"/repos?access_token="+environment.githubApi;
   searchEndpointA += "&q="+searchTerm;
   let PromiseA =  new Promise((resolve, reject)=>{
       this.http.get<personRepos>(searchEndpointA).toPromise().then(
